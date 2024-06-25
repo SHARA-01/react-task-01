@@ -13,7 +13,7 @@ function Task02() {
                  >Increament</button>
                 <button
                  className="border-2 px-2 py-1 bg-blue-500 rounded-md hover:text-white"
-                 onClick={()=> count>0 ? setCount(count-1): ''}>Decreament</button>
+                 onClick={()=>  setCount(count-1)}>Decreament</button>
             </span>
         </div>
     )

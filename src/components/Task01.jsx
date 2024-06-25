@@ -6,6 +6,7 @@ function Task01() {
   const [secondNumber, setSecondNumber] = useState(0);
   const [sum, setSum] = useState(0);
   const [UserName, setUserName] = useState('')
+  const [check, setCheck] = useState(false)
 
   const array = [
     {
@@ -38,10 +39,15 @@ function Task01() {
           <span className='font-bold'> Display array </span>
           <button
             className="border-2 px-2 py-1 bg-blue-500 rounded-md"
-            onClick={() => setDisplayArray(!displayArray)}
+            onClick={() => setDisplayArray(!displayArray)} disabled={check}
           >
             {displayArray ? "Hide" : "Show"}
           </button>
+          <button className="border-2 px-2 py-1 bg-blue-500 rounded-md" onClick={() => setCheck(!check)}
+          >
+            {check ? "Enable" : "disable"}
+          </button>
+       
         </li>
 
         {displayArray ? (
@@ -59,7 +65,7 @@ function Task01() {
         <input className='border-2 border-black/40 rounder-md mx-2 text-center' type="number" value={firstNumber} onChange={(e) => setFirstNumber(e.target.value)} />
         <input className='border-2 border-black/40 rounder-md mx-2 text-center' type="number" value={secondNumber} onChange={(e) => setSecondNumber(e.target.value)} />
         {
-          (firstNumber && secondNumber) > 0 ? <button
+          (firstNumber && secondNumber) != 0 ? <button
             className="border-2 px-2 py-1 bg-blue-500 rounded-md"
             onClick={handleAddButtion}
           >Add</button> : <button
@@ -77,6 +83,7 @@ function Task01() {
           <p>{UserName ?  `Hello, ${UserName}`: ''}</p>
         </li>
       </ul>
+
     </div>
   );
 }
