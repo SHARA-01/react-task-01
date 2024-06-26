@@ -52,7 +52,7 @@ function UserList() {
             <th>Segment</th>
         </thead>
         {
-        filtered.length >   0 ? filtered?.map((data)=> (
+        filtered.length && searchQuery.length > 0 ? filtered?.map((data)=> (
             <tr key={data?.id}>
             <td>{data?.name}</td>
             <td>{data?.last_seen}</td>
@@ -63,18 +63,18 @@ function UserList() {
             <td>{data?.segment}</td>
         </tr>
         ))
-        :
-        listData?.map((data)=> (
-                <tr key={data?.id}>
-                    <td>{data?.name}</td>
-                    <td>{data?.last_seen}</td>
-                    <td>{data?.order}</td>
-                    <td>{data?.total_spent}</td>
-                    <td>{data?.latest_purches}</td>
-                    <td>{data?.news ? "✅" : "❌"}</td>
-                    <td>{data?.segment}</td>
-                </tr>
-        ))
+        : searchQuery.length > 0 && filtered.length === 0 ? '' : listData?.map((data)=> (
+          <tr key={data?.id}>
+              <td>{data?.name}</td>
+              <td>{data?.last_seen}</td>
+              <td>{data?.order}</td>
+              <td>{data?.total_spent}</td>
+              <td>{data?.latest_purches}</td>
+              <td>{data?.news ? "✅" : "❌"}</td>
+              <td>{data?.segment}</td>
+          </tr>
+  )) 
+        
         }
        </table>
     </div>
