@@ -7,10 +7,16 @@ function UserList() {
     const [sortOrder, setSortOrder] = useState('asc');
     const [listData, setListData] = useState(List)
 
-    const handleFilter = (value)=> {
-        const data = List.filter(data => (data.name.toLowerCase().includes(value.toLowerCase()) || data.id.toLowerCase().includes(value.toLowerCase())))
-        setFilteredData(data)
-    }
+    const handleFilter = (value) => {
+      const data = List.filter(user =>
+        user.name.toLowerCase().includes(value.toLowerCase()) ||
+        user.id.includes(value) ||
+        user.total_spent.includes(`$${value}`) ||
+        user.latest_purches.includes(value) ||
+        user.segment.toLowerCase().includes(value.toLowerCase())
+      );
+      setFilteredData(data);
+    };
     
     const handleSort = (orderr) => {
         const sorted = [...filtered].sort((a, b) => {
