@@ -1,9 +1,10 @@
 import { useState } from 'react'
 import './App.css'
-import Task01 from './components/Task01'
-import Task02 from './components/Task02'
-import Task03 from './components/Task03'
-import Task04 from './components/task04'
+import Task01 from './pages/Task01'
+import Task02 from './pages/Task02'
+import Task03 from './pages/Task03'
+import Task04 from './pages/task04'
+import Task05 from './pages/Task05'
 
 function App() {
  const [dis, setDis] = useState(false)
@@ -32,6 +33,10 @@ function App() {
      <div className='my-10 border-t-2 border-black/50 px-5 py-5'>
         <h1 className='font-bold'>React Task 04</h1>
         <Task04 />
+     </div>
+     <div>
+     <h1 className='font-bold'>React Task 04</h1>
+     <Task05 />
      </div>
     </div>
   )
