@@ -35,7 +35,7 @@ function App() {
         <Task04 />
      </div>
      <div>
-     <h1 className='font-bold'>React Task 04</h1>
+     <h1 className='font-bold'>React Task 05</h1>
      <Task05 />
      </div>
     </div>
